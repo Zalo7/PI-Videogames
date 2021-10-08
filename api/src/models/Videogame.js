@@ -19,12 +19,12 @@ module.exports = (sequelize) => {
       allowNull: false,
     },
     releaseDate: {
-      type: DataTypes.STRING,
+      type: DataTypes.DATE,
     },
     rating: {
-      type: DataTypes.STRING,
+      type: DataTypes.FLOAT,
     },
-    plataforms: {
+    platforms: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -39,3 +39,5 @@ module.exports = (sequelize) => {
     }
   });
 };
+
+ 
