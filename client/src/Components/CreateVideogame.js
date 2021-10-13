@@ -15,7 +15,7 @@ function validate(input) { //NWY
 
 
 export default function CreateVideogame() {
-    const distpach = useDispatch()
+    const dispatch = useDispatch()
     const genres = useSelector((state) => state.genres)
     const history = useHistory
     const [errors, setErrors] = useState({})
@@ -30,7 +30,7 @@ export default function CreateVideogame() {
         genres: []
     })
     useEffect(() => {
-    dispatch(getGenre());
+    dispatch(getGenres());
 }, []);
 
 
@@ -58,7 +58,7 @@ function handleChange(e) {
 function handleDelete(e) { //NWY
     setInput({
         ...input,
-        genres: input.genres.filter( g => g !== el)
+        genres: input.genres.filter( g => g !== g.el)
     })
 }
 

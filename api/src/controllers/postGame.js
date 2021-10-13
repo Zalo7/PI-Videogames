@@ -2,7 +2,7 @@ const { DB_NAME } = process.env;
 const axios = require("axios");
 const { connection } = require('../db.js');
 const { Videogame, Genre } = connection(DB_NAME);
-async function createVideogame(req, res, next) {
+async function createVideogame(req, res) {
   let {
     id,
     name,
