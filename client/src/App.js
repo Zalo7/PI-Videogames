@@ -1,6 +1,6 @@
 import './App.css';
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
-import LandingPage from './Components/LandingPage'
+import LandingPage from './Components/Landing/LandingPage'
 import Home from './Components/Home/Home'
 import CreateVideogame from './Components/CreateVideogame'
 

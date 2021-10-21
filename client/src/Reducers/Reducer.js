@@ -33,7 +33,7 @@ function rootReducer(state = initialState, action) {
           ...state,
           genres: action.payload
         }
-    case "GET_NAME_VIDEOGAMES":
+    case "GET_NAME_VIDEOGAME":
       return {
         ...state,
         videogames: action.payload,

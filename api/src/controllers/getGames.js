@@ -91,9 +91,8 @@ const  getGenre =  async (_req, res) =>  {
 /// GET ID
 async function getVideogameById(req, res, next) {
   const { API_KEY } = process.env;
-
+  const { id } = req.params;
   try {
-    const { id } = req.params;
     if (isNaN(id)) {
       return await Videogame.findOne({
         where: {
@@ -109,24 +108,26 @@ async function getVideogameById(req, res, next) {
       });
     } else {
       //API
-      const response = await axios.get(`https://api.rawg.io/api/games/${id}?key=${API_KEY}`);
-      return {
-        id: response.data.id,
-        description: response.data.description,
-        name: response.data.name,
-        releaseDate: response.data.releaseDate,
-        image: response.data.image,
-        rating: response.data.rating,
-        genre: response.data.genres,
-        platforms: response.data.platforms
-      };
+      const response = await axios.get(`https://api.rawg.io/api/games/${id}?key=621e1885219145a89116d1b93ec70920`);
+      res.json(response.data)
+      // return {
+      //   id: response.data.id,
+      //   name: response.data.name,
+      //   description: response.data.description,
+      //   releaseDate: response.data.releaseDate,
+      //   rating: response.data.rating,
+      //   platforms: response.data.platforms,
+      //   genre: response.data.genres,
+      //   image: response.data.image
+      // };
     }
   } catch (error) {
     next(error);
   }
-}
+  }
+
 /// GET NAMES GAMES
-async function getNamesGames(req, res, next) {
+async function getNamesGames( res, next) {
   try {
 let names = (await axios.get('https://api.rawg.io/api/games?key=621e1885219145a89116d1b93ec70920&search={game}'))
 let game =  {

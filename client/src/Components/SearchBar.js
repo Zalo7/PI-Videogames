@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { getGame, getNameVideogames, setGame } from '../Actions/Actions';
-
+import '../Components/Home/Home.css';
 
 export default function SearchBar() { //NWY
     const dispatch = useDispatch()
@@ -21,7 +21,7 @@ function handleSubmit(e) {
 }
 
 return(
-    <div>
+    <div className='SearchBar'>
         <input
         type = 'text'
         placeholder = 'Buscar...'
